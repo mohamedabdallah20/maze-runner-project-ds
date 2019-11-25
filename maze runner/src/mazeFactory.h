@@ -1,14 +1,14 @@
 #include <string>
+#include <iostream>
+#include <fstream>
 using namespace std;
+
 class mazeFactory {
+    ifstream maze;
 	int width,height;
-	string maze;
-	void setheight();
-	void setwidth();
+	string * mazeS;
 public:
-	void getheight();
-	void getwidth();
-	mazeFactory();
+   	 mazeFactory();
 	 ~mazeFactory();
 };
 

@@ -1,21 +1,11 @@
 
 #include "DFS.h"
+#include "mazeFactory.h"
 #include <iostream>
 #include <string>
 using namespace std;
 
-
-node::node()
-{
-
-}
-node::~node()
-{
-
-}
-
 DFS::DFS() {
-	// TODO Auto-generated constructor stub
 
 }
 
