@@ -5,7 +5,10 @@
 using namespace std;
 
 int main() {
-
-	DFS m;
+	mazeFactory mf;
+    mf.getgraph();
 
 }
+
+
+
