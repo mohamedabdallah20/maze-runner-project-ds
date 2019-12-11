@@ -1,29 +1,23 @@
+#ifndef MAZEFACTORY_HEADER
+#define MAZEFACTORY_HEADER
 #include <string>
 #include <iostream>
 #include <fstream>
+#include <vector>
+#include <map>
+#include <unordered_map>
+
 using namespace std;
 
-class node{
-public:
-	int x, y;
-	node *up,*down,*right,*left;
-	node();
-	~node();
-};
 class mazeFactory {
-	node *root;
     ifstream maze;
-	int width,height;
-	char ** mazeS;
-	int ** intmaze;
-	bool **visited;
-	int x,y;
-	void graph(node*,bool,bool,bool,bool);
-	void coutgraph(node *);
 public:
-	void getgraph();
+	int width,height;
+	map<int, pair<int, int>> node_map;
+	unordered_map<int,vector<int>> matrix;
+	int x,y;
+	char ** mazeS;
    	 mazeFactory();
 	 ~mazeFactory();
 };
-
-
+#endif

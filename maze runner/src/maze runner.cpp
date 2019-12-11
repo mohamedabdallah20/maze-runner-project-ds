@@ -1,14 +1,11 @@
-
 #include <iostream>
-#include "DFS.h"
 #include "mazeFactory.h"
+#include "DFS.h"
 using namespace std;
 
 int main() {
-	mazeFactory mf;
-    mf.getgraph();
+	DFS df;
+	df.displaypath();
 
 }
-
-
 

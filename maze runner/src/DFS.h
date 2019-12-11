@@ -1,10 +1,19 @@
+#ifndef DFS_HEADER
+#define DFS_HEADER
 #include <string>
-
+#include <stack>
+#include"mazeFactory.h"
 using namespace std;
 class DFS {
- public:
-	int width,height;
-	string * maze;
+	mazeFactory mf;
+	bool *visited;
+	stack<int> path;
+	bool found;
+	int sizeofstack ;
+public:
+	void getpath(int start);
+	void displaypath();
 	DFS();
-    ~DFS();
+	~DFS();
 };
+#endif
