@@ -8,7 +8,8 @@ DFS::DFS() {
 	visited = new bool[mf.height * mf.width];
 	path.push(1);
 	found = false;
-	sizeofstack = 0;
+	lengthofpath=0;
+	numberOfCellVisited=0;
 }
 void DFS::getpath(int start) {
 	visited[start] = true;
@@ -17,7 +18,10 @@ void DFS::getpath(int start) {
 			found = true;
 		if (mf.matrix[path.top()][i] != 0 && visited[i] == false
 				&& found == false) {
+		   numberOfCellVisited++;
 			path.push(i);
+		//	mf.mazeS[mf.node_map[path.top()].first][mf.node_map[path.top()].second] =
+							'.';
 			getpath(path.top());
 		}
 
@@ -29,14 +33,19 @@ void DFS::getpath(int start) {
 }
 void DFS::displaypath() {
 	getpath(1);
-	sizeofstack = path.size();
-	for (int i = 0; i < sizeofstack; ++i) {
+	cout<<"\tsolution by DFS"<<endl;
+   	lengthofpath = path.size();
+   	cout<<"Random searsh:";
+	for (int i = 0; i < lengthofpath; ++i) {
 		cout << '(' << mf.node_map[path.top()].first << ','
-				<< mf.node_map[path.top()].second << ')' << endl;
+				<< mf.node_map[path.top()].second << ')' ;
 		mf.mazeS[mf.node_map[path.top()].first][mf.node_map[path.top()].second] =
 				'.';
 		path.pop();
 	}
+    cout<<endl;
+    cout<<"length of path = "<<lengthofpath<<endl;
+    cout<<"number of cell visited = "<<numberOfCellVisited;
 	for (int i = 0; i < mf.x; ++i) {
 		for (int j = 0; j < mf.y; ++j) {
 			cout << mf.mazeS[i][j];

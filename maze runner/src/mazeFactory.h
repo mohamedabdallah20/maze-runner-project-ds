@@ -10,6 +10,12 @@
 using namespace std;
 
 class mazeFactory {
+	int distance;
+	int calcdistance(int cellnumber);
+	void adjacentmatrix();
+	void createnodemap();
+	int mm;
+	int finalX,finalY;
     ifstream maze;
 public:
 	int width,height;

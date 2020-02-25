@@ -9,7 +9,8 @@ class DFS {
 	bool *visited;
 	stack<int> path;
 	bool found;
-	int sizeofstack ;
+	int lengthofpath;
+	int numberOfCellVisited ;
 public:
 	void getpath(int start);
 	void displaypath();
